@@ -3,6 +3,8 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Quiz Section</title>
+
+    <link rel="stylesheet" href="./bower_components/angular-material/angular-material.css" type="text/css" />
     <!--Angular-->
     <script src="./bower_components/angular/angular.js"></script>
     <!--Material-->
@@ -11,10 +13,23 @@
     <script src="./bower_components/angular-material/angular-material.js"></script>
     <!--New-Router-->
     <script src="./bower_components/angular-new-router/dist/router.es5.js"></script>
+    <!--ROUTERS JS-->
+    <script src="./components/addquestion/addquestion.js"></script>
+    <script src="./components/columnsection/columnsection.js"></script>
     <!--App.js-->
     <script src="./app.js"></script>
 </head>
-<body>
-<h1>THis is Adnan</h1>
+
+<body ng-app="app">
+<div ng-controller="AppController as app">
+    <md-button class="md-raised md-primary" ng-click="app.goTocolumnsection()">coloumn section</md-button>
+    <md-button class="md-raised md-primary" ng-click="app.goTogoToAddQuestion()">Add Question</md-button>
+    <!-- <md-button class="md-raised md-primary" ng-click="app.goToEdit()">Edit</md-button>-->
+</div>
+<div ng-viewport></div>
+
+
+
 </body>
+
 </html>
