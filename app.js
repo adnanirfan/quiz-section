@@ -2,22 +2,18 @@
  * Created by Taimoor on 7/7/2015.
  */
 
-var app = angular.module('app', ['ngNewRouter' ,'app.',  'app.view', 'app.edit' ,'ngMaterial']);
+var app = angular.module('app', ['ngNewRouter' ,'app.addquestion',  'app.columnsection' ,'ngMaterial']);
 app.controller('AppController', ['$router', '$location', AppController]);
 
 AppController.$routeConfig = [
 
     {
-        path:'/view',
-        component:'view'
-    },
-    {
         path:'/',
-        component:'add'
+        component:'addquestion'
     },
     {
-        path:'/edit/:id',
-        component:'edit'
+        path:'/columnsection',
+        component:'columnsection'
     }
 
 ];
@@ -26,12 +22,12 @@ AppController.$routeConfig = [
 function AppController($router,$location){
 
 
-    this.goToView = function(){
-        $location.path('/view');
+    this.goTocolumnsection = function(){
+        $location.path('/columnsection');
     };
 
 
-    this.goToAdd = function(){
+    this.goTogoToAddQuestion = function(){
         $location.path('/');
     };
 
