@@ -1,21 +1,41 @@
 /**
  * Created by Taimoor on 7/7/2015.
  */
-var app = angular.module("app", ["ngMaterial", "ngNewRouter"]);
+
+var app = angular.module('app', ['ngNewRouter' ,'app.',  'app.view', 'app.edit' ,'ngMaterial']);
+app.controller('AppController', ['$router', '$location', AppController]);
+
+AppController.$routeConfig = [
+
+    {
+        path:'/view',
+        component:'view'
+    },
+    {
+        path:'/',
+        component:'add'
+    },
+    {
+        path:'/edit/:id',
+        component:'edit'
+    }
+
+];
 
 
-app.controller("quizController", function($router){
+function AppController($router,$location){
 
-    $router.config([
-        {
-            path : "/",
-            component : "home"
-        },
-        {
-            path : "/home",//home
-            component : "home"
-        }
 
-    ]);
+    this.goToView = function(){
+        $location.path('/view');
+    };
 
-});
+
+    this.goToAdd = function(){
+        $location.path('/');
+    };
+
+    /*    this.goToEdit = function(){
+     $location.path('/view/edit({ida:5})');
+     };*/
+}
