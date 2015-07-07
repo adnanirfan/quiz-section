@@ -12,7 +12,7 @@ app.controller("quizController", function($router){
             component : "home"
         },
         {
-            path : "/home",
+            path : "/home",//home
             component : "home"
         }
 
