@@ -1,0 +1,48 @@
+<div id="creatGroup" >
+
+    <form style="background-color: #005DE9;"name="groupForm"  novalidate="">
+        <ng-md-icon icon="close" size="50" layout-padding ng-click="$root.newImg = null;quizAddTopic.prev()"></ng-md-icon>
+        <md-content class="grayScroller" style="height: calc(102.6vh - 88px);max-width:70%;margin: 0 auto">
+            <md-card style="margin: 0 auto">
+                <md-card-content style="padding: 50px;">
+                    <h1 style="color: #d3d3d3;font-weight: 500;">Add Topics</h1>
+
+                    <h2 style="font-weight: 500;">Topic Title <ng-md-icon icon="info_outline" size="25" style="fill:#4b7497"></ng-md-icon> </h2>
+                    <md-input-container>
+                        <label><!--Title-->Topic Title</label>
+                        <input name="questionTitle" ng-model="quizAddTopic.topic.Title" minlength="3" maxlength="30" required>
+                        <div ng-show="groupForm.$submitted || groupForm.groupTitle.$touched" ng-messages="groupForm.groupTitle.$error">
+                            <div class="invalid_color" ng-message="required">This is required.</div>
+                            <div class="invalid_color" ng-message="minlength">Required minimum length 3</div>
+                            <div class="invalid_color" ng-message="maxlength">Required maximum length 30</div>
+                        </div>
+                    </md-input-container>
+                    <h2 style="font-weight: 500;">Topic Description</h2>
+                    <md-input-container>
+                        <label><!--Title-->Topic Description</label>
+                        <textarea name="chapterDescription" ng-model="quizAddTopic.topic.Description" minlength="20" maxlength="200" required></textarea>
+                        <div ng-show="groupForm.$submitted || groupForm.groupTitle.$touched" ng-messages="groupForm.groupTitle.$error">
+                            <div class="invalid_color" ng-message="required">This is required.</div>
+                            <div class="invalid_color" ng-message="minlength">Required minimum length 3</div>
+                            <div class="invalid_color" ng-message="maxlength">Required maximum length 40</div>
+                        </div>
+                    </md-input-container>
+                    <div flex offset="10">
+                        <!--<md-button class="md-raised md-primary">Submit</md-button>-->
+                        <md-button ng-disabled="groupForm.$invalid" class="md-primary" style="margin-left: 80%;" ng-click="quizAddTopic.addTopics()">Create</md-button>
+                    </div>
+
+
+                    <!--<md-button class="md-raised md-primary" ng-click="add.addChapters()" style="margin-left: 90%">Add</md-button>-->
+                    <!--
+                                        <ul>
+                                            <li ng-repeat="ch in quizAddBook.chapters">{{ch}}</li>
+                                        </ul>-->
+
+                </md-card-content>
+            </md-card>
+        </md-content>
+    </form>
+</div>
+
+</div>
