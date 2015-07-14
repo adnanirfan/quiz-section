@@ -1,0 +1,40 @@
+
+
+<md-dialog aria-label="{{questionData.Title}}">
+    <form>
+        <md-toolbar style="width: 650px;">
+            <div class="md-toolbar-tools">
+                <h2>{{questionData.Title}}</h2>
+                <span flex></span>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <h4 style="font-weight: 500; color: #32B4CC;">Title: </h4>
+            <h5>{{questionData.Title}}</h5>
+            <h4 style="font-weight: 500; color: #32B4CC;">Description</h4>
+            <h5>{{questionData.Description}}</h5>
+            <h4 style="font-weight: 500; color: #32B4CC;">Question Type</h4>
+            <h5>{{questionData.Type}}</h5>
+            <h4 style="font-weight: 500; color: #32B4CC;">Question Options</h4>
+            <h5 ng-repeat="option in questionData.QuestionOptions">
+                Option {{$index+1}} : {{option.optionText}}
+            </h5>
+            <div ng-if="questionData.Type === 'Radio Button'">
+                <h4 style="font-weight: 500; color: #32B4CC;">Correct Answer</h4>
+                <h5>{{questionData.Answer}}</h5>
+            </div>
+            <div ng-if="questionData.Type === 'CheckBox'">
+                <h4 style="font-weight: 500; color: #32B4CC;">Correct Answers</h4>
+                <ul>
+                    <li ng-repeat="Answer in questionData.Answer">{{Answer}}</li>
+                </ul>
+            </div>
+        </md-dialog-content>
+        <div class="md-actions" layout="row">
+            <span flex></span>
+            <md-button ng-click="answer('Close')" class="md-primary">
+                Close
+            </md-button>
+        </div>
+    </form>
+</md-dialog>
